@@ -5,7 +5,7 @@ const mongodbClient = require('mongodb').MongoClient
 require('dotenv').config()
 
 let db ,
-    dbConectionString = processs.env.DB_STRING,
+    dbConectionString = process.env.DB_STRING,
     dbName ='Sample_Database',
     collection ;
 
@@ -15,3 +15,7 @@ mongodbClient.connect(dbConectionString)
         db = client.db(dbName)
         collection = db.collection('Database_1')
     })
+
+app.listen(process.env.PORT || PORT, () =>{
+    console.log(`Server is running on port `)
+})
